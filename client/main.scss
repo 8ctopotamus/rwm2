@@ -1,0 +1,19 @@
+$darkblue: #1e2f5d;
+$darkerblue: #17274c;
+$blue: #1e60ac;
+$lightblue: #6293ca;
+$green: #00724f;
+$lightgreen: #12ae7f;
+
+//$google-font: "url-here";
+// @if(global-variable-exists(google-font)) {
+//     @import url($google-font);
+// }
+
+@import "{}/node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+.player-wrap {
+  background: $darkblue;
+  padding: 15px;
+  color: #fff;
+}

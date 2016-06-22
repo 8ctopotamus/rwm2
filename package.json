@@ -1,0 +1,19 @@
+{
+  "name": "rwm2.0",
+  "private": true,
+  "scripts": {
+    "start": "meteor run --settings settings.json"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
+    "bootstrap-sass": "^3.3.6",
+    "mediaelement": "^2.21.2",
+    "meteor-node-stubs": "~0.2.0",
+    "moment": "^2.13.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-mixin": "^3.0.5",
+    "react-mounter": "^1.2.0",
+    "react-spin": "^0.6.2"
+  }
+}
