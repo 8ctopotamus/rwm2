@@ -17,7 +17,7 @@ export default class Player extends TrackerReact(React.Component) {
   }
 
   componentDidMount() {
-    console.log(this.state.podcastData)
+    // console.log(this.state.podcastData)
     $('#player').mediaelementplayer({
       audioWidth: '90%',
       success: function (mediaElement, domObject) {
