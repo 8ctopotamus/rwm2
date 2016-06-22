@@ -11,14 +11,12 @@ export const MainLayout = ({content}) => (
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-3">
-          <ClientSidebar
-              name={Session.get('rwClientName')}
-              designation={Session.get('designation')} />
+          <ClientSidebar rwClientData={Session.get('rwClientData')} />
         </div>
         <div className="col-md-9">
           { content }
           <PodcastLib data={Session.get('podcastData')} />
-      </div>
+        </div>
       </div>
     </div>
   </div>
