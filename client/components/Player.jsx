@@ -29,17 +29,10 @@ export default class Player extends TrackerReact(React.Component) {
   render() {
     return (
       <div className="player-wrap">
-        <div className="row">
-          <div className="col-sm-3">
-            Real Wealth
-          </div>
-          <div className="col-sm-9">
-            <h1 className="h6">{this.state.title}</h1>
-            <audio id="player" controls>
-              <source src={this.state.podcast}></source>
-            </audio>
-          </div>
-        </div>
+        <h1 className="h6">{this.state.title}</h1>
+        <audio id="player" controls>
+          <source src={this.state.podcast}></source>
+        </audio>
       </div>
     )
   }

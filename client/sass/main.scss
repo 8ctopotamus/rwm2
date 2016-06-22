@@ -9,18 +9,41 @@ $lightGreen: #12ae7f;
 // @if(global-variable-exists(google-font)) {
 //     @import url($google-font);
 // }
-
 @import "{}/node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.main-container {
+  padding: 100px 0 0 200px;
+}
+
+
 .player-wrap {
+  padding: 15px 0 15px 215px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
   background: $darkblue;
-  padding: 15px;
   color: #fff;
 }
 
+
 .client-sidebar {
+  position: fixed;
+  z-index: 1040;
+  width: 200px;
+  height: 100%;
+  /*background: #ebedf1;*/
+  background: #DCE0EB;
   word-wrap: break-word;
+
+  ul {display: none;}
 }
+
 
 .podcast-library-wrap {
   .media-left {
@@ -38,6 +61,10 @@ $lightGreen: #12ae7f;
     margin-top: 0;
   }
 }
+
+
+/*     CUSTOM RW PLAYER STYLES
+**************************************/
 
 .mejs-container .mejs-controls {
 	background: transparent;

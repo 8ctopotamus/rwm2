@@ -1,7 +1,6 @@
 import React from 'react';
 import { Session } from 'meteor/session';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
-
 import { map } from 'lodash';
 
 export default class ClientSidebar extends TrackerReact(React.Component) {
@@ -25,7 +24,7 @@ export default class ClientSidebar extends TrackerReact(React.Component) {
   render() {
     return (
       <div className="client-sidebar">
-        <img src={ this.state.img } className="center-block" />
+        <img src={ this.state.img } className="img-responsive center-block" />
         <h2 className="text-center">{ this.state.name }</h2>
         <ul>
           {this._renderData()}
