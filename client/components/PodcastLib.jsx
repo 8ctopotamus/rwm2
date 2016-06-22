@@ -9,15 +9,14 @@ export default class PodcastLib extends TrackerReact(React.Component) {
   constructor(props) {
     super(props);
     this.state = {
-      data: this.props.data
+      podcastData: this.props.podcastData
     }
   }
 
   _renderList() {
-    console.log(this.state.data);
-    // this.state.data.map((podcast) => {
-    //   return (<div key="podcast.id">{podcast.id}</div>)
-    // });
+    return this.state.podcastData.map((podcast) => {
+      return (<div key={podcast.id}>{podcast.id}</div>)
+    });
   }
 
   render() {

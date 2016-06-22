@@ -3,7 +3,7 @@ $darkerblue: #17274c;
 $blue: #1e60ac;
 $lightblue: #6293ca;
 $green: #00724f;
-$lightgreen: #12ae7f;
+$lightGreen: #12ae7f;
 
 //$google-font: "url-here";
 // @if(global-variable-exists(google-font)) {
@@ -20,4 +20,32 @@ $lightgreen: #12ae7f;
 
 .client-sidebar {
   word-wrap: break-word;
+}
+
+/*custom*/
+.mejs-container .mejs-controls {
+	background: transparent;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-current {
+  background: $lightGreen;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($lightGreen), to($green));
+  background: -webkit-linear-gradient(top, $lightGreen, $green);
+  background: -moz-linear-gradient(top, $lightGreen, $green);
+  background: -o-linear-gradient(top, $lightGreen, $green);
+  background: -ms-linear-gradient(top, $lightGreen, $green);
+  background: linear-gradient($lightGreen, $green);
+  width: 0;
+}
+
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background: #fff;
+  background: rgba(255,255,255,0.8);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.9)), to(rgba(200,200,200,0.8)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0.9), rgba(200,200,200,0.8));
+  background: -moz-linear-gradient(top, rgba(255,255,255,0.9), rgba(200,200,200,0.8));
+  background: -o-linear-gradient(top, rgba(255,255,255,0.9), rgba(200,200,200,0.8));
+  background: -ms-linear-gradient(top, rgba(255,255,255,0.9), rgba(200,200,200,0.8));
+  background: linear-gradient(rgba(255,255,255,0.9), rgba(200,200,200,0.8));
+  width: 0;
 }

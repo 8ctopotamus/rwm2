@@ -10,14 +10,16 @@ export default class Player extends TrackerReact(React.Component) {
   constructor(props) {
     super(props);
     this.state = {
+      podcastData: this.props.podcastData,
       podcast: this.props.podcast,
       title: this.props.title
     }
   }
 
   componentDidMount() {
+    console.log(this.state.podcastData)
     $('#player').mediaelementplayer({
-      audioWidth: '100%',
+      audioWidth: '90%',
       success: function (mediaElement, domObject) {
         // mediaElement.play();
       }

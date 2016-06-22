@@ -5,8 +5,11 @@ import PodcastLib from '../components/PodcastLib.jsx';
 
 export const MainLayout = ({content}) => (
   <div className="app-wrap">
-    <Player podcast={Session.get('currentAudio')}
-              title={Session.get('currentTitle')} />
+
+    <Player
+      podcastData={Session.get('podcastData')}
+      podcast={Session.get('currentAudio')}
+      title={Session.get('currentTitle')} />
 
     <div className="container-fluid">
       <div className="row">
@@ -15,7 +18,7 @@ export const MainLayout = ({content}) => (
         </div>
         <div className="col-md-9">
           { content }
-          <PodcastLib data={Session.get('podcastData')} />
+          <PodcastLib podcastData={Session.get('podcastData')} />
         </div>
       </div>
     </div>
