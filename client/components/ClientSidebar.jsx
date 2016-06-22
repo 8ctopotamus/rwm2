@@ -18,7 +18,7 @@ export default class ClientSidebar extends TrackerReact(React.Component) {
     let counter = 0;
     return _.map(this.state.contactInfo, (el)=>{
       if (el === '') return;
-      return <li key={counter++} className="list-group-item">{el}</li>
+      return <li key={counter++}>{el}</li>
     });
   }
 
@@ -26,8 +26,8 @@ export default class ClientSidebar extends TrackerReact(React.Component) {
     return (
       <div className="client-sidebar">
         <img src={ this.state.img } className="center-block" />
-        <h2>{ this.state.name }</h2>
-        <ul className="list-group">
+        <h2 className="text-center">{ this.state.name }</h2>
+        <ul>
           {this._renderData()}
         </ul>
       </div>

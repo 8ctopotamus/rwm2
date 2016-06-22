@@ -22,30 +22,49 @@ $lightGreen: #12ae7f;
   word-wrap: break-word;
 }
 
-/*custom*/
+.podcast-library-wrap {
+  .media-left {
+    img {
+      max-width: 100px;
+    }
+    span {
+      display: block;
+      text-align: center;
+      font-size: .8em;
+      margin-top: 4px;
+    }
+  }
+  .media-heading {
+    margin-top: 0;
+  }
+}
+
 .mejs-container .mejs-controls {
 	background: transparent;
 }
 
-.mejs-controls .mejs-time-rail .mejs-time-current {
-  background: $lightGreen;
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($lightGreen), to($green));
-  background: -webkit-linear-gradient(top, $lightGreen, $green);
-  background: -moz-linear-gradient(top, $lightGreen, $green);
-  background: -o-linear-gradient(top, $lightGreen, $green);
-  background: -ms-linear-gradient(top, $lightGreen, $green);
-  background: linear-gradient($lightGreen, $green);
-  width: 0;
-}
-
-.mejs-controls .mejs-time-rail .mejs-time-loaded {
-  background: #fff;
-  background: rgba(255,255,255,0.8);
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.9)), to(rgba(200,200,200,0.8)));
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0.9), rgba(200,200,200,0.8));
-  background: -moz-linear-gradient(top, rgba(255,255,255,0.9), rgba(200,200,200,0.8));
-  background: -o-linear-gradient(top, rgba(255,255,255,0.9), rgba(200,200,200,0.8));
-  background: -ms-linear-gradient(top, rgba(255,255,255,0.9), rgba(200,200,200,0.8));
-  background: linear-gradient(rgba(255,255,255,0.9), rgba(200,200,200,0.8));
-  width: 0;
+.mejs-controls {
+  .mejs-time-rail {
+    .mejs-time-current {
+      background: $lightGreen;
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($lightGreen), to($green));
+      background: -webkit-linear-gradient(top, $lightGreen, $green);
+      background: -moz-linear-gradient(top, $lightGreen, $green);
+      background: -o-linear-gradient(top, $lightGreen, $green);
+      background: -ms-linear-gradient(top, $lightGreen, $green);
+      background: linear-gradient($lightGreen, $green);
+      width: 0;
+    }
+    .mejs-time-loaded {
+      background: #fff;
+      background: rgba(255,255,255,0.8);
+      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,0.9)), to(rgba(200,200,200,0.8)));
+      background: -webkit-linear-gradient(top, rgba(255,255,255,0.9), rgba(200,200,200,0.8));
+      background: -moz-linear-gradient(top, rgba(255,255,255,0.9), rgba(200,200,200,0.8));
+      background: -o-linear-gradient(top, rgba(255,255,255,0.9), rgba(200,200,200,0.8));
+      background: -ms-linear-gradient(top, rgba(255,255,255,0.9), rgba(200,200,200,0.8));
+      background: linear-gradient(rgba(255,255,255,0.9), rgba(200,200,200,0.8));
+      width: 0;
+    }
+  }
 }
