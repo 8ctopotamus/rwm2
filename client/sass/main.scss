@@ -4,11 +4,14 @@ $blue: #1e60ac;
 $lightblue: #6293ca;
 $green: #00724f;
 $lightGreen: #12ae7f;
+$blueGrey: #dce0eb;
 
 //$google-font: "url-here";
 // @if(global-variable-exists(google-font)) {
 //     @import url($google-font);
 // }
+
+$grid-gutter-width: 100px;
 @import "{}/node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 html, body {
@@ -16,13 +19,8 @@ html, body {
   height: 100%;
 }
 
-.main-container {
-  padding: 100px 0 0 200px;
-}
-
-
 .player-wrap {
-  padding: 15px 0 15px 215px;
+  padding: 15px 0 25px 215px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -31,34 +29,54 @@ html, body {
   color: #fff;
 }
 
-
 .client-sidebar {
   position: fixed;
   z-index: 1040;
   width: 200px;
   height: 100%;
-  /*background: #ebedf1;*/
-  background: #DCE0EB;
+  background: darken($darkblue, 10%);
+  color: $blueGrey;
   word-wrap: break-word;
 
-  ul {display: none;}
+  .rw-client-name {
+    margin-top: 0;
+    padding: 5px;
+    background: $darkblue;
+    color: $lightblue;
+    text-align: center;
+  }
+
+  ul {
+    font-size: .8em;
+  }
 }
 
+.main-container {
+  padding: 125px 0 0 200px;
+}
 
 .podcast-library-wrap {
-  .media-left {
-    img {
-      max-width: 100px;
+  .media {
+    &:hover {
+      background-color: lighten($blueGrey, 10%);
+      .media-heading {color: $blue;}
     }
-    span {
-      display: block;
-      text-align: center;
-      font-size: .8em;
-      margin-top: 4px;
+
+    .media-heading {
+      margin-top: 0;
     }
-  }
-  .media-heading {
-    margin-top: 0;
+
+    .media-left {
+      img {
+        max-width: 100px;
+      }
+      span {
+        display: block;
+        text-align: center;
+        font-size: .8em;
+        margin-top: 4px;
+      }
+    }
   }
 }
 

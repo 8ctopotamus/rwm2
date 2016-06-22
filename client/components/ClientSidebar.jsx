@@ -22,10 +22,22 @@ export default class ClientSidebar extends TrackerReact(React.Component) {
   }
 
   render() {
+    let styles = {
+      display: 'block',
+      height: '200px',
+      backgroundImage: "url(" + this.state.img + ")",
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
+    }
+
     return (
       <div className="client-sidebar">
-        <img src={ this.state.img } className="img-responsive center-block" />
-        <h2 className="text-center">{ this.state.name }</h2>
+        <div style={styles}></div>
+
+        <h2 className="h3 rw-client-name">
+          { this.state.name }
+        </h2>
+
         <ul>
           {this._renderData()}
         </ul>

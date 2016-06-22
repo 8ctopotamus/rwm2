@@ -10,16 +10,17 @@ export default class Player extends TrackerReact(React.Component) {
   constructor(props) {
     super(props);
     this.state = {
-      podcastData: this.props.podcastData,
-      podcast: this.props.podcast,
-      title: this.props.title
+      currentPodcast: this.props.podcastData,
+      title: this.props.podcastData.title.rendered,
+      audio: this.props.podcastData.acf.podcast_file
     }
   }
 
   componentDidMount() {
-    // console.log(this.state.podcastData)
+    console.log(this.state.currentPodcast)
+
     $('#player').mediaelementplayer({
-      audioWidth: '90%',
+      audioWidth: '80%',
       success: function (mediaElement, domObject) {
         // mediaElement.play();
       }
@@ -27,12 +28,15 @@ export default class Player extends TrackerReact(React.Component) {
   }
 
   render() {
+
     return (
       <div className="player-wrap">
-        <h1 className="h6">{this.state.title}</h1>
-        <audio id="player" controls>
-          <source src={this.state.podcast}></source>
-        </audio>
+        <div className="container">
+          <h1 className="h6">{this.state.title}</h1>
+          <audio id="player" controls>
+            <source src={this.state.audio}></source>
+          </audio>
+        </div>
       </div>
     )
   }

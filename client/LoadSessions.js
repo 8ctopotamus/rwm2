@@ -16,10 +16,10 @@ Meteor.startup(function() {
   let url = API_URL + '/podcasts?filter[date_query][before]='+ CURRENT_DATE +'T9:00:00';
   HTTP.get(url, {}, ( error, response ) => {
     if ( error ) throw new Meteor.Error('count-not-get-current-podcast', error);
+
     Session.setPersistent({
-      'podcastData': response.data,
-      'currentAudio': response.data[0].acf.podcast_file,
-      'currentTitle': response.data[0].title.rendered,
+      'podcastData': response.data, // first 10 podcasts
+      'currentPodcast': response.data[0]
     });
   });
 });
