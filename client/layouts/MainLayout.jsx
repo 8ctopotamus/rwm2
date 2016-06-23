@@ -21,11 +21,6 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 // }
 
 class AppWrap extends TrackerReact(React.Component) {
-  constructor(props) {
-   super(props);
-  }
-
-
   render() {
     return (
       <div className="app-wrap">
@@ -43,7 +38,6 @@ class AppWrap extends TrackerReact(React.Component) {
     );
   }
 }
-
 
 export const MainLayout = ({content}) => (
   <AppWrap content={content} />

@@ -5,6 +5,7 @@ $lightblue: #6293ca;
 $green: #00724f;
 $lightGreen: #12ae7f;
 $blueGrey: #dce0eb;
+$clientSidebarWidth: 200px;
 
 //$google-font: "url-here";
 // @if(global-variable-exists(google-font)) {
@@ -20,8 +21,8 @@ html, body {
 }
 
 .player-wrap {
-  padding: 15px 0 25px 215px;
-position: fixed;
+  padding: 15px 15px 25px $clientSidebarWidth + 15;
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
@@ -36,7 +37,7 @@ position: fixed;
 .client-sidebar {
   position: fixed;
   z-index: 1040;
-  width: 200px;
+  width: $clientSidebarWidth;
   height: 100%;
   background: darken($darkblue, 10%);
   color: $blueGrey;
@@ -56,13 +57,13 @@ position: fixed;
 }
 
 .main-container {
-  padding: 125px 0 0 200px;
+  padding: 125px 0 125px 200px;
 }
 
 .podcast-library-wrap {
   .media {
     &:hover {
-      background-color: lighten($blueGrey, 10%);
+      background-color: lighten($blueGrey, 3%);
       .media-heading {color: $blue;}
     }
 
