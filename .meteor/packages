@@ -22,6 +22,7 @@ insecure                # Allow all DB writes from clients (for prototyping)
 
 http
 session
+react-meteor-data
 ultimatejs:tracker-react
 fourseven:scss
 meteortoys:allthings

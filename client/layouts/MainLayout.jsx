@@ -1,8 +1,8 @@
 import React from 'react';
-import Player from '../components/Player.jsx';
+import RWPlayer from '../components/RWPlayer.jsx';
 import ClientSidebar from '../components/ClientSidebar.jsx';
 import PodcastLib from '../components/PodcastLib.jsx';
-
+import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
 // class CurrentPodcastInfo extends React.Component {
 //   constructor(props) {
@@ -20,20 +20,31 @@ import PodcastLib from '../components/PodcastLib.jsx';
 //   }
 // }
 
-export const MainLayout = ({content}) => (
-  <div className="app-wrap">
+class AppWrap extends TrackerReact(React.Component) {
+  constructor(props) {
+   super(props);
+  }
 
-    <Player podcastData={Session.get('currentPodcast')} />
 
-    <ClientSidebar rwClientData={Session.get('rwClientData')} />
+  render() {
+    return (
+      <div className="app-wrap">
+        <RWPlayer podcastData={Session.get('currentPodcast')} />
+        <ClientSidebar rwClientData={Session.get('rwClientData')} />
 
-    <div className="main-container">
-      <div className="container-fluid">
-        {/*<CurrentPodcastInfo podcastData={Session.get('currentPodcast')} />*/}
+        <div className="main-container">
+          <div className="container-fluid">
+            {/*<CurrentPodcastInfo podcastData={Session.get('currentPodcast')} />*/}
 
-        { content }
-        <PodcastLib podcastData={Session.get('podcastData')} />
+            <PodcastLib podcastData={Session.get('podcastData')} />
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    );
+  }
+}
+
+
+export const MainLayout = ({content}) => (
+  <AppWrap content={content} />
 );

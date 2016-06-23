@@ -31,7 +31,7 @@ export default class ClientSidebar extends TrackerReact(React.Component) {
     }
 
     return (
-      <div className="client-sidebar">
+      <section className="client-sidebar">
         <div style={styles}></div>
 
         <h2 className="h3 rw-client-name">
@@ -41,7 +41,7 @@ export default class ClientSidebar extends TrackerReact(React.Component) {
         <ul>
           {this._renderData()}
         </ul>
-      </div>
+      </section>
     )
   }
 }

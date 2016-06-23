@@ -78,6 +78,7 @@ ordered-dict@1.0.8
 promise@0.7.2
 random@1.0.10
 rate-limit@1.0.5
+react-meteor-data@0.2.9
 reactive-dict@1.1.8
 reactive-var@1.0.10
 reload@1.1.9
@@ -92,6 +93,7 @@ standard-minifier-js@1.0.7
 templating@1.1.11
 templating-tools@1.0.4
 themeteorchef:bert@2.1.0
+tmeasday:check-npm-versions@0.2.0
 tracker@1.0.14
 u2622:persistent-session@0.4.4
 ui@1.0.11

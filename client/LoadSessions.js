@@ -18,8 +18,8 @@ Meteor.startup(function() {
     if ( error ) throw new Meteor.Error('count-not-get-current-podcast', error);
 
     Session.setPersistent({
-      'podcastData': response.data, // first 10 podcasts
-      'currentPodcast': response.data[0]
+      'podcastData': response.data, // returns []
+      'currentPodcast': response.data[0] // returns {}
     });
   });
 });
