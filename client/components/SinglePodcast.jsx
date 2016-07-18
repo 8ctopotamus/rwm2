@@ -22,6 +22,7 @@ export default class SinglePodcast extends TrackerReact(React.Component) {
 
   _setAsCurrent() {
     Session.update({'currentPodcast': this})
+    console.log(Session.get("currentPodcast"))
   }
 
   _toggleActive() {
@@ -31,6 +32,7 @@ export default class SinglePodcast extends TrackerReact(React.Component) {
   render() {
     const ASSET_URL = "https://realwealthmarketing.com/wp-content/uploads/";
     let podcast = this.props.podcast;
+
     let prepareMarkup = function(content) { return {__html: content}; };
     const stateStyle = this.state.active ? styles.active : styles.inactive;
 

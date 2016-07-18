@@ -12,6 +12,8 @@ export default class RWPlayer extends TrackerReact(React.Component) {
       podcastFile: props.podcastData.acf.podcast_file,
       title: props.podcastData.title.rendered
     }
+
+    console.log(this.props)
   }
 
   componentDidMount() {

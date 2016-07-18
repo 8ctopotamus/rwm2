@@ -42,9 +42,11 @@ class AppWrap extends TrackerReact(React.Component) {
     if (podcasts.length < 1) {
       return <span>Loading podcasts</span> }
 
+    console.log(Session.get('currentPodcast'))
+
     return (
       <div className="app-wrap">
-      <RWPlayer podcastData={podcasts[0]} />
+      <RWPlayer podcastData={Session.get('currentPodcast')} />
 
         <ClientSidebar rwClientData={rwClient} />
 
