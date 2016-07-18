@@ -21,7 +21,7 @@ export default class SinglePodcast extends TrackerReact(React.Component) {
   }
 
   _setAsCurrent() {
-    Session.setPersistent({'currentPodcast': this})
+    Session.update({'currentPodcast': this})
   }
 
   _toggleActive() {
@@ -37,7 +37,7 @@ export default class SinglePodcast extends TrackerReact(React.Component) {
     return (
       <div className="media" onClick={this._toggleActive}>
         <div className="media-left">
-          <img src={ASSET_URL + podcast.better_featured_image.media_details.file}
+          <img src={podcast.better_featured_image.media_details.sizes.thumbnail.source_url}
                alt={podcast.better_featured_image.alt_text}
                className="media-object" />
           <span>
@@ -48,11 +48,12 @@ export default class SinglePodcast extends TrackerReact(React.Component) {
         </div>
 
         <div className="media-body">
-          <h4 className="h3 media-heading"
-              onClick={this._setAsCurrent.bind(podcast)} >
-              { podcast.title.rendered }
-          </h4>
           { podcast.date }
+
+          <h3 className="media-heading"
+              dangerouslySetInnerHTML={prepareMarkup(podcast.title.rendered)}
+              onClick={this._setAsCurrent.bind(podcast)} />
+
           <div dangerouslySetInnerHTML={prepareMarkup(podcast.content.rendered)}
                style={stateStyle}></div>
         </div>

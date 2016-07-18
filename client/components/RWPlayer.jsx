@@ -8,6 +8,10 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 export default class RWPlayer extends TrackerReact(React.Component) {
   constructor(props) {
     super(props);
+    this.state = {
+      podcastFile: props.podcastData.acf.podcast_file,
+      title: props.podcastData.title.rendered
+    }
   }
 
   componentDidMount() {
@@ -19,9 +23,13 @@ export default class RWPlayer extends TrackerReact(React.Component) {
     });
   }
 
+  shouldComponentUpdate(nextProps) {
+    return nextProps.id == this.props.id;
+  }
+
   componentWillReceiveProps(nextProps) {
     rwPlayer.setSrc(nextProps.podcastData.acf.podcast_file);
-    rwPlayer.play();
+    // rwPlayer.play();
   }
 
   render() {

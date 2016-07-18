@@ -1,10 +1,10 @@
 import React from 'react';
-import { Session } from 'meteor/session';
 import SinglePodcast from './SinglePodcast.jsx';
-import TrackerReact from 'meteor/ultimatejs:tracker-react';
+// import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
+export default class PodcastLib extends React.Component {
+  
 
-export default class PodcastLib extends TrackerReact(React.Component) {
   _renderList() {
     return this.props.podcastData.map((podcast) => {
       return (

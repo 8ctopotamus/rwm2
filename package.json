@@ -5,9 +5,7 @@
     "start": "meteor run --settings settings.json"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.2",
     "bootstrap-sass": "^3.3.6",
-    "lodash": "^4.13.1",
     "mediaelement": "^2.21.2",
     "meteor-node-stubs": "~0.2.0",
     "moment": "^2.13.0",
