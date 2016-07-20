@@ -6,7 +6,7 @@ import { _ } from 'meteor/underscore';
 export default class ClientSidebar extends TrackerReact(React.Component) {
   _renderData() {
     let counter = 0;
-    return _.map(this.props.rwClientData.acf, (el)=>{
+    return _.map(this.props.rwClientData.acf, (el)=>{      
       if (el === '') return;
       return <li key={counter++}>{el}</li>
     });

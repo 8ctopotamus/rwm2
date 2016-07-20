@@ -16,6 +16,30 @@ Meteor.methods({
     try {
       let res = HTTP.call('GET', url, {});
       res.data.map((podcast) => {
+        // delete the WP stuff we don't need
+        delete podcast.date_gmt;
+        delete podcast.guid;
+        delete podcast.modified;
+        delete podcast.modified_gmt;
+        delete podcast.slug;
+        delete podcast.type;
+        delete podcast.format;
+        delete podcast.link;
+        delete podcast.excerpt;
+        delete podcast.featured_media;
+        delete podcast.parent;
+        delete podcast.acf.air_date;
+        delete podcast.acf.add_to_cart_id;
+        delete podcast.acf.transcript_file_url;
+        delete podcast.acf.air_date;
+        delete podcast.acf.facebook_posts;
+        delete podcast.acf.twitter_posts;
+        delete podcast.acf.linkedin_posts;
+        delete podcast.acf.life_happens_pro;
+        delete podcast._links;
+        for (size in podcast.better_featured_image.media_details.sizes) {
+          if (size !== 'thumbnail' || size !== "medium") delete size;
+        }
         Podcasts.insert( podcast );
       });
     }
@@ -26,13 +50,13 @@ Meteor.methods({
   },
 
   _getRWClientsFromMktg() {
-    let pageCount = 2;
+    let pageCount = 1;
     let reqURL = API_URL + "/users?page=" + pageCount + "&per_page=100"; // "&context=edit&access_token=" + ACCESS_TOKEN
     try {
       let res = HTTP.call('GET', reqURL, {});
       console.log(res.headers.link)
       res.data.map((client) => {
-        //delete the WP stuff we don't need
+        // delete the WP stuff we don't need
         delete client.link;
         delete client._links;
         RWClients.insert( client );
