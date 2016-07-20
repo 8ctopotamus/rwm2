@@ -37,17 +37,6 @@ export default class SinglePodcast extends TrackerReact(React.Component) {
 
     return (
       <div className="media" onClick={this._toggleActive}>
-        <div className="media-left">
-          <img src={podcast.better_featured_image.media_details.sizes.thumbnail.source_url}
-               alt={podcast.better_featured_image.alt_text}
-               className="media-object" />
-          <span>
-            {podcast.better_featured_image.alt_text}
-              <br />
-            <strong>ToDo: click image to view Guest info</strong>
-          </span>
-        </div>
-
         <div className="media-body">
           { podcast.date }
 
@@ -60,6 +49,14 @@ export default class SinglePodcast extends TrackerReact(React.Component) {
 
              <span>See {this.props.rwClientData.name + "'s Notes"}</span>
         </div>
+
+        <div className="media-right text-center">
+          <img src={podcast.better_featured_image.media_details.sizes.thumbnail.source_url}
+               alt={podcast.better_featured_image.alt_text}
+               className="media-object" />
+          {podcast.better_featured_image.alt_text}
+        </div>
+
       </div>
     )
   }

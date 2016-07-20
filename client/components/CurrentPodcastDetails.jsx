@@ -15,15 +15,15 @@ export default class CurrentPodcastDetails extends React.Component {
     return (
       <div className="container-fluid current-podcast-details">
         <div className="row">
-          <div className="col-md-8">
-            <h1 dangerouslySetInnerHTML={this._prepareTitle()} />
-            <div dangerouslySetInnerHTML={this._prepareDesc()} />
-          </div>
-          <div className="col-md-4 text-center">
+          <div className="col-md-4 col-md-push-8 text-center">
             <img src={this.props.podcastData.better_featured_image.media_details.sizes.medium.source_url}
                  className="img-responsive center-block"
                  alt={this.props.podcastData.better_featured_image.alt_text} />
                {this.props.podcastData.better_featured_image.alt_text}
+          </div>
+          <div className="col-md-8 col-md-pull-4">
+            <h1 dangerouslySetInnerHTML={this._prepareTitle()} />
+            <div dangerouslySetInnerHTML={this._prepareDesc()} />
           </div>
         </div>
 

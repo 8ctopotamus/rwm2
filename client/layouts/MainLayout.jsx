@@ -1,7 +1,7 @@
 import React from 'react';
 // import { createContainer } from 'meteor/react-meteor-data';
-
 import RWPlayer from '../components/RWPlayer.jsx';
+import ClientFooter from '../components/ClientFooter.jsx';
 import ClientSidebar from '../components/ClientSidebar.jsx';
 import CurrentPodcastDetails from '../components/CurrentPodcastDetails.jsx';
 import PodcastLib from '../components/PodcastLib.jsx';
@@ -58,12 +58,11 @@ class AppWrap extends TrackerReact(React.Component) {
 
         <div className="main-container">
           <CurrentPodcastDetails podcastData={Session.get('currentPodcast')} />
-          
-          <div className="container-fluid">
-            <PodcastLib podcastData={podcasts}
-                        rwClientData={rwClient} />
-          </div>
+          <PodcastLib podcastData={podcasts}
+                      rwClientData={rwClient} />
+          <ClientFooter complianceMsg={rwClient.acf.compliance_message} />
         </div>
+        
       </div>
     );
   }

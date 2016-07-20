@@ -13,7 +13,7 @@ export default class PodcastLib extends React.Component {
 
   render() {
     return (
-      <section className="podcast-library-wrap">
+      <section className="container-fluid podcast-library-wrap">
         <h3>Podcast Library</h3>
         <div className="podcast-list">
           {this._renderList()}

@@ -31,7 +31,7 @@ export default class ClientSidebar extends TrackerReact(React.Component) {
           { this.props.rwClientData.name }
         </h2>
 
-        <ul>
+        <ul className="client-contact-details">
           {this._renderData()}
         </ul>
       </section>

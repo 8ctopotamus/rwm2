@@ -1,7 +1,9 @@
 $darkblue: #1e2f5d;
 $darkerblue: #17274c;
 $blue: #1e60ac;
+
 $lightblue: #6293ca;
+$brand-primary: $blue;
 $brand-success: #00724f;
 $lightGreen: #12ae7f;
 $blueGrey: #dce0eb;
@@ -21,7 +23,7 @@ html, body {
 }
 
 .main-container {
-  padding: 97px 0 125px 200px;
+  padding: 97px 0 100px $clientSidebarWidth;
 }
 
 .player-wrap {
@@ -56,7 +58,9 @@ html, body {
     text-align: center;
   }
 
-  ul {
+  .client-contact-details {
+    padding: 10px;
+    list-style: none;
     font-size: .8em;
   }
 }
@@ -76,7 +80,7 @@ html, body {
     background: $lightGreen;
     margin-top: 25px;
     padding: 25px;
-    color: #fff;
+    color: lighten($lightGreen, 25%);
     display: flex;
     justify-content: space-between;
   }
@@ -88,19 +92,18 @@ html, body {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-
-    justify-content: space-around;
-
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     .media {
-
-      //     display: -webkit-flex;
-      //     display: -ms-flexbox;
-      //     display: flex;
-      width: 45%;
+      // display: -webkit-flex;
+      // display: -ms-flexbox;
+      // display: flex;
+      border: 1px solid $blueGrey;
+      width: 48%;
+      padding: 5px;
 
       &:hover {
         background-color: lighten($blueGrey, 3%);
@@ -124,6 +127,18 @@ html, body {
       }
     }
   }
+}
+
+.client-footer {
+  color: #5a5a5a;
+  background: #282d31;
+}
+
+
+@media (max-width: 767px) {
+  .player-wrap { padding: 15px 15px 25px; }
+  .main-container { padding: 97px 0 100px; }
+  .client-sidebar {display: none;}
 }
 
 
