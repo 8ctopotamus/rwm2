@@ -30,7 +30,6 @@ export default class SinglePodcast extends TrackerReact(React.Component) {
   }
 
   render() {
-    const ASSET_URL = "https://realwealthmarketing.com/wp-content/uploads/";
     let podcast = this.props.podcast;
 
     let prepareMarkup = function(content) { return {__html: content}; };
@@ -58,6 +57,8 @@ export default class SinglePodcast extends TrackerReact(React.Component) {
 
           <div dangerouslySetInnerHTML={prepareMarkup(podcast.content.rendered)}
                style={stateStyle}></div>
+
+             <span>See {this.props.rwClientData.name + "'s Notes"}</span>
         </div>
       </div>
     )

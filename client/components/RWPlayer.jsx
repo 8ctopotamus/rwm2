@@ -12,8 +12,6 @@ export default class RWPlayer extends TrackerReact(React.Component) {
       podcastFile: props.podcastData.acf.podcast_file,
       title: props.podcastData.title.rendered
     }
-
-    console.log(this.props)
   }
 
   componentDidMount() {
@@ -34,11 +32,13 @@ export default class RWPlayer extends TrackerReact(React.Component) {
     // rwPlayer.play();
   }
 
+  _prepareTitle() { return {__html: this.props.podcastData.title.rendered}; };
+
   render() {
     return (
       <section className="player-wrap">
         <img className="rw-logo" src="/realwealth-logo.svg" width="150" />
-        <h1 className="h4">{this.props.podcastData.title.rendered}</h1>
+        <span className="player-title" dangerouslySetInnerHTML={this._prepareTitle()} />
         <audio id="rwPlayer" ref="rwPlayer" controls>
           <source ref="rwPlayerSource" src={this.props.podcastData.acf.podcast_file}></source>
         </audio>

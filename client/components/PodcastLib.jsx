@@ -6,7 +6,7 @@ export default class PodcastLib extends React.Component {
   _renderList() {
     return this.props.podcastData.map((podcast) => {
       return (
-        <SinglePodcast key={podcast.id} podcast={podcast} />
+        <SinglePodcast key={podcast.id} podcast={podcast} rwClientData={this.props.rwClientData} />
       )
     });
   }
@@ -15,7 +15,9 @@ export default class PodcastLib extends React.Component {
     return (
       <section className="podcast-library-wrap">
         <h3>Podcast Library</h3>
-        {this._renderList()}
+        <div className="podcast-list">
+          {this._renderList()}
+        </div>
       </section>
     )
   }

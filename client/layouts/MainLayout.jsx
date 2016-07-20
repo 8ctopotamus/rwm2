@@ -14,8 +14,8 @@ class AppWrap extends TrackerReact(React.Component) {
       subscription: {
         rwClient: Meteor.subscribe("RWClient", FlowRouter.getParam('userslug')),
         podcasts: Meteor.subscribe("Podcasts")
-      },
-      // libData: Session.get('podcastData'),
+
+      }
     };
   }
 
@@ -35,25 +35,33 @@ class AppWrap extends TrackerReact(React.Component) {
 
   render() {
     let rwClient = this._getRWClient();
+
     if (rwClient === undefined) {
       return <span>"Loading <em>Real</em> Wealth<sup>&reg;</sup> Advisor"</span>; }
+    // else if (rwClient == 0) {
+    //   return <span>Cannot find {FlowRouter.getParam("slug")}</span>}
+
 
     let podcasts = this._getPodcasts();
     if (podcasts.length < 1) {
       return <span>Loading podcasts</span> }
 
-    console.log(Session.get('currentPodcast'))
+    if(Session.get('currentPodcast')==undefined) {
+      Session.setDefaultPersistent({'currentPodcast': podcasts[0]});
+      console.log(Session.get('currentPodcast'))
+    }
 
     return (
       <div className="app-wrap">
-      <RWPlayer podcastData={Session.get('currentPodcast')} />
-
+        <RWPlayer podcastData={Session.get('currentPodcast')} />
         <ClientSidebar rwClientData={rwClient} />
 
         <div className="main-container">
+          <CurrentPodcastDetails podcastData={Session.get('currentPodcast')} />
+          
           <div className="container-fluid">
-            {/*<CurrentPodcastDetails podcastData={Session.get('currentPodcast')} />*/}
-            <PodcastLib podcastData={podcasts} />
+            <PodcastLib podcastData={podcasts}
+                        rwClientData={rwClient} />
           </div>
         </div>
       </div>
