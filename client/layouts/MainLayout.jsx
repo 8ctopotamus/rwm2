@@ -13,7 +13,7 @@ class AppWrap extends TrackerReact(React.Component) {
     this.state = {
       subscription: {
         rwClient: Meteor.subscribe("RWClient", FlowRouter.getParam('userslug')),
-        podcasts: Meteor.subscribe("Podcasts")
+        podcasts: Meteor.subscribe("Podcasts", 10)
 
       }
     };
@@ -62,7 +62,7 @@ class AppWrap extends TrackerReact(React.Component) {
                       rwClientData={rwClient} />
           <ClientFooter complianceMsg={rwClient.acf.compliance_message} />
         </div>
-        
+
       </div>
     );
   }

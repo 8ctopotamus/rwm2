@@ -44,7 +44,7 @@ Meteor.methods({
       });
     }
     catch (err) {
-      if ( err ) throw new Meteor.Error('count-not-get-current-podcast', error);
+      if ( err ) throw new Meteor.Error('count-not-get-current-podcast', err);
       return false;
     }
   },

@@ -39,22 +39,19 @@ export default class SinglePodcast extends TrackerReact(React.Component) {
       <div className="media" onClick={this._toggleActive}>
         <div className="media-body">
           { podcast.date }
-
           <h3 className="media-heading"
               dangerouslySetInnerHTML={prepareMarkup(podcast.title.rendered)}
               onClick={this._setAsCurrent.bind(podcast)} />
-
           <div dangerouslySetInnerHTML={prepareMarkup(podcast.content.rendered)}
                style={stateStyle}></div>
-
-             <span>See {this.props.rwClientData.name + "'s Notes"}</span>
+          <span>See {this.props.rwClientData.name + "'s Notes"}</span>
         </div>
 
         <div className="media-right text-center">
-          <img src={podcast.better_featured_image.media_details.sizes.thumbnail.source_url}
+          {/*<img src={podcast.better_featured_image.media_details.sizes.thumbnail.source_url}
                alt={podcast.better_featured_image.alt_text}
-               className="media-object" />
-          {podcast.better_featured_image.alt_text}
+               className="media-object" />*/}
+          {/*podcast.better_featured_image.alt_text*/}
         </div>
 
       </div>

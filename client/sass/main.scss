@@ -23,7 +23,7 @@ html, body {
 }
 
 .main-container {
-  padding: 97px 0 100px $clientSidebarWidth;
+  padding: 97px 0 0 $clientSidebarWidth;
 }
 
 .player-wrap {
@@ -98,9 +98,9 @@ html, body {
     justify-content: space-between;
 
     .media {
-      // display: -webkit-flex;
-      // display: -ms-flexbox;
-      // display: flex;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
       border: 1px solid $blueGrey;
       width: 48%;
       padding: 5px;
@@ -130,6 +130,8 @@ html, body {
 }
 
 .client-footer {
+  padding-top: 50px;
+  padding-bottom: 75px;
   color: #5a5a5a;
   background: #282d31;
 }
@@ -144,7 +146,6 @@ html, body {
 
 /*     CUSTOM RW PLAYER STYLES
 **************************************/
-
 .mejs-container .mejs-controls {
   margin-top: 10px;
 	background: transparent;
