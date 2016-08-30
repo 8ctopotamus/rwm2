@@ -5,6 +5,7 @@ import ClientFooter from '../components/ClientFooter.jsx';
 import ClientSidebar from '../components/ClientSidebar.jsx';
 import CurrentPodcastDetails from '../components/CurrentPodcastDetails.jsx';
 import PodcastLib from '../components/PodcastLib.jsx';
+import ReactSpinner from 'react-spin';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
 class AppWrap extends TrackerReact(React.Component) {
@@ -37,14 +38,14 @@ class AppWrap extends TrackerReact(React.Component) {
     let rwClient = this._getRWClient();
 
     if (rwClient === undefined) {
-      return <span>"Loading <em>Real</em> Wealth<sup>&reg;</sup> Advisor"</span>; }
+      return <ReactSpinner /> }
+      // return <span>"Loading <em>Real</em> Wealth<sup>&reg;</sup> Advisor"</span>; }
     // else if (rwClient == 0) {
     //   return <span>Cannot find {FlowRouter.getParam("slug")}</span>}
 
-
     let podcasts = this._getPodcasts();
     if (podcasts.length < 1) {
-      return <span>Loading podcasts</span> }
+      return <ReactSpinner /> }
 
     if(Session.get('currentPodcast')==undefined) {
       Session.setDefaultPersistent({'currentPodcast': podcasts[0]});
@@ -62,7 +63,6 @@ class AppWrap extends TrackerReact(React.Component) {
                       rwClientData={rwClient} />
           <ClientFooter complianceMsg={rwClient.acf.compliance_message} />
         </div>
-
       </div>
     );
   }

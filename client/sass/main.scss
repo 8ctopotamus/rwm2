@@ -1,21 +1,28 @@
-$darkblue: #1e2f5d;
-$darkerblue: #17274c;
-$blue: #1e60ac;
 
-$lightblue: #6293ca;
-$brand-primary: $blue;
-$brand-success: #00724f;
-$lightGreen: #12ae7f;
-$blueGrey: #dce0eb;
-$clientSidebarWidth: 200px;
 
 //$google-font: "url-here";
 // @if(global-variable-exists(google-font)) {
 //     @import url($google-font);
 // }
 
-$grid-gutter-width: 100px;
-@import "{}/node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// $grid-gutter-width: 100px;
+// @import "{}/node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// @import "{poetic:materialize-scss}/sass/components/_color.scss";
+// $primary-color: color("blue", "lighten-2");
+
+// @import "materialize.scss";
+@import "{poetic:materialize-scss}/sass/materialize.scss";
+
+$clientSidebarWidth: 230px;
+
+$darkblue: #1e2f5d;
+$darkerblue: #17274c;
+$blue: #1e60ac;
+$lightblue: #6293ca;
+$brand-primary: $blue;
+$brand-success: #00724f;
+$lightGreen: #12ae7f;
+$blueGrey: #dce0eb;
 
 html, body {
   width: 100%;
@@ -56,6 +63,7 @@ html, body {
     background: $darkblue;
     color: $lightblue;
     text-align: center;
+    font-size: $h5-fontsize;
   }
 
   .client-contact-details {

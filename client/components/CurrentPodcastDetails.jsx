@@ -13,21 +13,31 @@ export default class CurrentPodcastDetails extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid current-podcast-details">
-        <div className="row">
-          <div className="col-md-4 col-md-push-8 text-center">
-            <img src={this.props.podcastData.better_featured_image.media_details.sizes.medium.source_url}
-                 className="img-responsive center-block"
-                 alt={this.props.podcastData.better_featured_image.alt_text} />
-               {this.props.podcastData.better_featured_image.alt_text}
-          </div>
-          <div className="col-md-8 col-md-pull-4">
-            <h1 dangerouslySetInnerHTML={this._prepareTitle()} />
-            <div dangerouslySetInnerHTML={this._prepareDesc()} />
+      <div className="current-podcast-details">
+
+        <div className="">
+          <div className="row">
+            <div className="col m5 col-md-push-8 text-center">
+              <img src={this.props.podcastData.better_featured_image.media_details.sizes.medium.source_url}
+                   className="responsive-img center-block z-depth-3"
+                   alt={this.props.podcastData.better_featured_image.alt_text} />
+                 {this.props.podcastData.better_featured_image.alt_text}
+            </div>
+
+            <div className="col m7 col-md-pull-4">
+              <h2 dangerouslySetInnerHTML={this._prepareTitle()} />
+              <div dangerouslySetInnerHTML={this._prepareDesc()} />
+
+                <a className="btn-floating waves-effect waves-light red"><i className="material-icons">add</i></a>
+                <a className="btn-floating waves-effect waves-light red"><i className="material-icons">add</i></a>
+                <a className="waves-effect waves-light btn"><i className="fa fa-file-audio-o right"></i>Download</a>
+                <a className="waves-effect waves-light btn"><i className="material-icons right">cloud</i>Subscribe</a>
+            </div>
           </div>
         </div>
 
         <div className="icon-container">
+
           <a href="" title="Download" download="">
             <i className="fa fa-download fa-3x"></i>
             <strong>Download</strong> This Episode
