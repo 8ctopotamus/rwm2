@@ -30,7 +30,7 @@ html, body {
 }
 
 .main-container {
-  padding: 97px 0 0 $clientSidebarWidth;
+  padding:93px 0 0 $clientSidebarWidth;
 }
 
 .player-wrap {
@@ -39,7 +39,7 @@ html, body {
   width: 100%;
   top: 0;
   z-index: 1000;
-  background: $darkblue;
+  background: $lightGreen;
   color: #fff;
   margin-bottom: 0;
 
@@ -79,11 +79,14 @@ html, body {
   color: #fff;
   box-shadow: inset 0px -10px 40px rgba(0,0,0,.3);
 
-  h1 {color: $lightGreen}
+  h2 {
+    color: $lightGreen;
+    font-size: $h3-fontsize;;
+  }
 
   a {color: #fff;}
 
-  .icon-container {
+  aside {
     border-radius: 4px 4px 0 0;
     background: $lightGreen;
     margin-top: 25px;

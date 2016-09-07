@@ -1,3 +1,4 @@
+import { Tab, Tabs } from 'react-materialize';
 import React from 'react';
 // import { createContainer } from 'meteor/react-meteor-data';
 import RWPlayer from '../components/RWPlayer.jsx';
@@ -15,9 +16,9 @@ class AppWrap extends TrackerReact(React.Component) {
       subscription: {
         rwClient: Meteor.subscribe("RWClient", FlowRouter.getParam('userslug')),
         podcasts: Meteor.subscribe("Podcasts", 10)
-
       }
     };
+    console.log(this.props.content)
   }
 
   componentWillUnmount() {
@@ -47,7 +48,7 @@ class AppWrap extends TrackerReact(React.Component) {
     if (podcasts.length < 1) {
       return <ReactSpinner /> }
 
-    if(Session.get('currentPodcast')==undefined) {
+    if(Session.get('currentPodcast') == undefined) {
       Session.setDefaultPersistent({'currentPodcast': podcasts[0]});
       console.log(Session.get('currentPodcast'))
     }
@@ -57,12 +58,18 @@ class AppWrap extends TrackerReact(React.Component) {
         <RWPlayer podcastData={Session.get('currentPodcast')} />
         <ClientSidebar rwClientData={rwClient} />
 
-        <div className="main-container">
-          <CurrentPodcastDetails podcastData={Session.get('currentPodcast')} />
-          <PodcastLib podcastData={podcasts}
-                      rwClientData={rwClient} />
+        <main className="main-container">
+          <Tabs className='tab-demo z-depth-1'>
+            <Tab title="Now Playing">
+              <CurrentPodcastDetails podcastData={Session.get('currentPodcast')} />
+            </Tab>
+            <Tab title="Podcast Library">
+              <PodcastLib podcastData={podcasts} rwClientData={rwClient} />
+            </Tab>
+            <Tab title="Test 2">Resources</Tab>
+          </Tabs>
           <ClientFooter complianceMsg={rwClient.acf.compliance_message} />
-        </div>
+        </main>
       </div>
     );
   }

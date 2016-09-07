@@ -1,8 +1,5 @@
-import { HTTP } from 'meteor/http';
 import {mediaelementplayer} from 'meteor/delgermurun:mediaelementjs';
-import { Meteor } from 'meteor/meteor';
 import React from 'react';
-import { Session } from 'meteor/session';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
 export default class RWPlayer extends TrackerReact(React.Component) {
@@ -37,11 +34,18 @@ export default class RWPlayer extends TrackerReact(React.Component) {
   render() {
     return (
       <section className="player-wrap">
-        <img className="rw-logo" src="/realwealth-logo.svg" width="150" />
-        <span className="player-title" dangerouslySetInnerHTML={this._prepareTitle()} />
-        <audio id="rwPlayer" ref="rwPlayer" controls>
-          <source ref="rwPlayerSource" src={this.props.podcastData.acf.podcast_file}></source>
-        </audio>
+        <div className="row">
+          <div className="col s11">
+            <span className="player-title" dangerouslySetInnerHTML={this._prepareTitle()} />
+            <audio id="rwPlayer" ref="rwPlayer" controls>
+              <source ref="rwPlayerSource" src={this.props.podcastData.acf.podcast_file}></source>
+            </audio>
+          </div>
+          <div className="col s1">
+            <img src={this.props.podcastData.better_featured_image.media_details.sizes.thumbnail.source_url}
+                 className="responsive-img" />
+          </div>
+        </div>
       </section>
     )
   }

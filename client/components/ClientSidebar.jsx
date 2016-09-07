@@ -30,7 +30,6 @@ export default class ClientSidebar extends TrackerReact(React.Component) {
 
     return (
       <section className="client-sidebar">
-
         <div style={styles}></div>
 
         <h2 className="h3 rw-client-name">
