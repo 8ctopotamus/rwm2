@@ -5,10 +5,13 @@ import TrackerReact from 'meteor/ultimatejs:tracker-react';
 export default class RWPlayer extends TrackerReact(React.Component) {
   constructor(props) {
     super(props);
-    this.state = {
-      podcastFile: props.podcastData.acf.podcast_file,
-      title: props.podcastData.title.rendered
-    }
+
+//    console.log(this.props.podcastData)
+
+    // this.state = {
+    //   podcastFile: props.podcastData.acf.podcast_file,
+    //   title: props.podcastData.title.rendered
+    // }
   }
 
   componentDidMount() {
@@ -31,19 +34,25 @@ export default class RWPlayer extends TrackerReact(React.Component) {
 
   _prepareTitle() { return {__html: this.props.podcastData.title.rendered}; };
 
+  _renderImg() {
+   return this.props.podcastData.better_featured_image.media_details.sizes.thumbnail.source_url ?
+   [this.props.podcastData.better_featured_image.media_details.sizes.thumbnail.source_url] :
+   '/rwlogo-placeholder.svg'
+  }
+
   render() {
     return (
       <section className="player-wrap">
         <div className="row">
           <div className="col s11">
-            <span className="player-title" dangerouslySetInnerHTML={this._prepareTitle()} />
+            <img src="/realwealth-logo-horiz.svg" className="rw-logo" alt="Real Wealth Media" />
+            <h6 className="player-title" dangerouslySetInnerHTML={this._prepareTitle()} />
             <audio id="rwPlayer" ref="rwPlayer" controls>
               <source ref="rwPlayerSource" src={this.props.podcastData.acf.podcast_file}></source>
             </audio>
           </div>
           <div className="col s1">
-            <img src={this.props.podcastData.better_featured_image.media_details.sizes.thumbnail.source_url}
-                 className="responsive-img" />
+            <img src={this._renderImg()} className="player-img" alt={"Guest: " + this.props.podcastData.better_featured_image.alt_text} />
           </div>
         </div>
       </section>

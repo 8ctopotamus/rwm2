@@ -33,8 +33,16 @@ html, body {
   padding:93px 0 0 $clientSidebarWidth;
 }
 
+@media only screen and (min-width: 993px) {
+  .main-container {
+    .container {
+      width: 82%;
+    }
+  }
+}
+
 .player-wrap {
-  padding: 15px 15px 25px $clientSidebarWidth + 15;
+  padding: 12px 15px 22px $clientSidebarWidth + 15;
   position: fixed;
   width: 100%;
   top: 0;
@@ -43,8 +51,25 @@ html, body {
   color: #fff;
   margin-bottom: 0;
 
-  .player-title {
-    float: right;
+  .row {
+    margin-bottom: 0;
+
+    .player-title {
+      float: right;
+    }
+
+    .rw-logo {
+      width: 150px;
+      height: auto;
+    }
+
+    .player-img {
+      width: 78%;
+      height: auto;
+    }
+
+    .mejs-container {display: block;}
+
   }
 }
 
@@ -79,7 +104,10 @@ html, body {
   color: #fff;
   box-shadow: inset 0px -10px 40px rgba(0,0,0,.3);
 
+  .rw-logo {}
+
   h2 {
+    margin-top: 0;
     color: $lightGreen;
     font-size: $h3-fontsize;;
   }
@@ -108,34 +136,13 @@ html, body {
     flex-wrap: wrap;
     justify-content: space-between;
 
-    .media {
+    .card-panel {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      border: 1px solid $blueGrey;
+      // border: 1px solid $blueGrey;
       width: 48%;
-      padding: 5px;
-
-      &:hover {
-        background-color: lighten($blueGrey, 3%);
-        .media-heading {color: $blue;}
-      }
-
-      .media-heading {
-        margin-top: 0;
-      }
-
-      .media-left {
-        img {
-          max-width: 100px;
-        }
-        span {
-          display: block;
-          text-align: center;
-          font-size: .8em;
-          margin-top: 4px;
-        }
-      }
+      // padding: 5px;
     }
   }
 }

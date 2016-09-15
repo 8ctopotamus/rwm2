@@ -6,8 +6,9 @@ export default class ClientFooter extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid client-footer">
-        <div dangerouslySetInnerHTML={this._prepareMsg()} />
+      <div className="client-footer">
+        <div dangerouslySetInnerHTML={this._prepareMsg()}
+             className="container" />
       </div>
     );
   }

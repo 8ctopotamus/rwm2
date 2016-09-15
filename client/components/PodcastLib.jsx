@@ -1,6 +1,7 @@
-import React from 'react';
-import SinglePodcast from './SinglePodcast.jsx';
-// import TrackerReact from 'meteor/ultimatejs:tracker-react';
+import React from 'react'
+import SinglePodcast from './SinglePodcast.jsx'
+import TrackerReact from 'meteor/ultimatejs:tracker-react'
+
 
 export default class PodcastLib extends React.Component {
   _renderList() {
@@ -8,12 +9,12 @@ export default class PodcastLib extends React.Component {
       return (
         <SinglePodcast key={podcast.id} podcast={podcast} rwClientData={this.props.rwClientData} />
       )
-    });
+    })
   }
 
   render() {
     return (
-      <section className="container-fluid podcast-library-wrap">
+      <section className="container podcast-library-wrap grey lighten-5">
         <h3>Podcast Library</h3>
         <div className="podcast-list">
           {this._renderList()}

@@ -5,13 +5,17 @@
     "start": "meteor run --settings settings.json"
   },
   "dependencies": {
+    "bcrypt": "^0.8.7",
+    "bcrypt-nodejs": "0.0.3",
     "bootstrap-sass": "^3.3.6",
     "fontawesome": "^4.5.0",
     "mediaelement": "^2.21.2",
     "meteor-node-stubs": "~0.2.0",
     "moment": "^2.13.0",
     "react": "^15.3.1",
+    "react-addons-css-transition-group": "^15.3.1",
     "react-addons-pure-render-mixin": "^15.1.0",
+    "react-bootstrap-pagination": "^1.0.2",
     "react-dom": "^15.1.0",
     "react-materialize": "^0.16.4",
     "react-mixin": "^3.0.5",
