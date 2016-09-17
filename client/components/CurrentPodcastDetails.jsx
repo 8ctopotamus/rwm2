@@ -1,6 +1,6 @@
 import React from 'react'
 import AccountsUIWrapper from './AccountsUIWrapper.jsx'
-import { Button, Modal } from 'react-materialize'
+import { Button, Modal, Tabs, Tab } from 'react-materialize'
 
 export default class CurrentPodcastDetails extends React.Component {
   _prepareTitle() { return {__html: this.props.podcastData.title.rendered} }
@@ -47,9 +47,9 @@ export default class CurrentPodcastDetails extends React.Component {
           </div>
         </div>
 
-        <aside className="row">
+        <aside className="row ad-quote-bar">
           <div className="col m6">
-            ad
+            <img src="http://placehold.it/640x180" />
           </div>
           <div className="col m6">
             Quote

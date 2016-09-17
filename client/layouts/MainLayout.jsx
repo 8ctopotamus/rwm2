@@ -1,4 +1,4 @@
-import { Tab, Tabs } from 'react-materialize'
+import { Container, Row, Col, Tab, Tabs } from 'react-materialize'
 import React from 'react'
 // import { createContainer } from 'meteor/react-meteor-data'
 import RWPlayer from '../components/RWPlayer.jsx'
@@ -36,6 +36,10 @@ class AppWrap extends TrackerReact(React.Component) {
     return Podcasts.find().fetch()
   }
 
+  _determineFrequency(frequency) {
+    return frequency === 'weekly' ? 'Week' : 'Month'
+  }
+
   render() {
     let rwClient = this._getRWClient()
 
@@ -62,9 +66,24 @@ class AppWrap extends TrackerReact(React.Component) {
         <RWPlayer podcastData={Session.get('currentPodcast')} />
         <ClientSidebar rwClientData={rwClient} />
 
-        <main className="main-container">
+        <main className="main-container grey lighten-5">
           <CurrentPodcastDetails podcastData={Session.get('currentPodcast')} />
-          <PodcastLib podcastData={podcasts} rwClientData={rwClient} />
+
+          <div className="container">
+            <Row>
+                <Col m={8}>
+                  <PodcastLib podcastData={podcasts} rwClientData={rwClient} />
+                </Col>
+                <Col m={4}>
+                  <blockquote>
+                    <h5>Quote of the {this._determineFrequency(rwClient.acf.podcast_frequency)}</h5>
+                    <p>“Try not to become a man of success, but rather, try to become a man of value.” - Albert Einstein</p>
+                  </blockquote>
+                  <img src="http://placehold.it/300x300?text=Ad" className="responsive-img" />
+                </Col>
+            </Row>
+          </div>
+
           <ClientFooter complianceMsg={rwClient.acf.compliance_message} />
         </main>
       </div>

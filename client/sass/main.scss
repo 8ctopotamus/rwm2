@@ -1,15 +1,3 @@
-
-
-//$google-font: "url-here";
-// @if(global-variable-exists(google-font)) {
-//     @import url($google-font);
-// }
-
-// $grid-gutter-width: 100px;
-// @import "{}/node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-// @import "{poetic:materialize-scss}/sass/components/_color.scss";
-// $primary-color: color("blue", "lighten-2");
-
 // @import "materialize.scss";
 @import "{poetic:materialize-scss}/sass/materialize.scss";
 
@@ -36,7 +24,8 @@ html, body {
 @media only screen and (min-width: 993px) {
   .main-container {
     .container {
-      width: 82%;
+      // width: 82%;
+      width: 92%;
     }
   }
 }
@@ -88,13 +77,14 @@ html, body {
     background: $darkblue;
     color: $lightblue;
     text-align: center;
-    font-size: $h5-fontsize;
+    // font-size: $h5-fontsize;
+    font-size: 1em;
   }
 
   .client-contact-details {
     padding: 10px;
     list-style: none;
-    font-size: .8em;
+    font-size: 1em;
   }
 }
 
@@ -109,12 +99,13 @@ html, body {
   h2 {
     margin-top: 0;
     color: $lightGreen;
-    font-size: $h3-fontsize;;
+    // font-size: $h1-fontsize;
+    font-size: 3em;
   }
 
   a {color: #fff;}
 
-  aside {
+  .ad-quote-bar {
     border-radius: 4px 4px 0 0;
     background: $lightGreen;
     margin-top: 25px;
@@ -122,26 +113,26 @@ html, body {
     color: lighten($lightGreen, 25%);
     display: flex;
     justify-content: space-between;
+    display: none;
   }
 }
 
 
 .podcast-library-wrap {
   .podcast-list {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    // display: -webkit-flex;
+    // display: -ms-flexbox;
+    // display: flex;
+    // -webkit-flex-wrap: wrap;
+    // -ms-flex-wrap: wrap;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
 
     .card-panel {
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      // border: 1px solid $blueGrey;
-      width: 48%;
+      // display: -webkit-flex;
+      // display: -ms-flexbox;
+      // display: flex;
+      // width: 48%;
       // padding: 5px;
     }
   }

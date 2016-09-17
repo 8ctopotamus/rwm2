@@ -11,7 +11,7 @@ const styles = {
   }
 }
 
-export default class SinglePodcast extends TrackerReact(React.Component) {
+export default class PodcastCard extends TrackerReact(React.Component) {
   constructor() {
     super()
     this.state = {
@@ -30,7 +30,6 @@ export default class SinglePodcast extends TrackerReact(React.Component) {
   }
 
   _renderImg() {
-    console.log(this.props.podcast)
     if(this.props.podcast.better_featured_image.media_details.sizes.thumbnail.source_url) {
       return this.props.podcast.better_featured_image.media_details.sizes.thumbnail.source_url
     } else {
